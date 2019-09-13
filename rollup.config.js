@@ -7,6 +7,7 @@ process.env.BABEL_ENV = 'production'
 module.exports = {
   external: [
     'element-resize-detector',
+    'hoist-non-react-statics',
     'invariant',
     'throttle-debounce',
     'prop-types',

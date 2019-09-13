@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import invariant from 'invariant'
 import { debounce, throttle } from 'throttle-debounce'
+import hoistNonReactStatics from 'hoist-non-react-statics'
 import resizeDetector from './resize-detector'
 
 const errMsg =
@@ -328,6 +329,7 @@ function withSize(config = defaultConfig) {
       }
     }
 
+    hoistNonReactStatics(SizeAwareComponent, WrappedComponent)
     SizeAwareComponent.WrappedComponent = WrappedComponent
 
     return SizeAwareComponent
